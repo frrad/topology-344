@@ -1,0 +1,66 @@
+\documentclass[10pt]{article}
+\setlength\headheight{14.5pt}
+\title{Homework}
+\author{Frederick Robinson}
+\date{5 April 2010}
+\usepackage{amsfonts}
+\usepackage{fancyhdr}
+\usepackage{amsthm}
+\pagestyle{fancyplain}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+
+\begin{document}
+
+\lhead{Frederick Robinson}
+\rhead{Math 344: Topology}
+
+   \maketitle
+
+
+
+\section{Chapter 5 Section 1}
+
+\subsection{Problem 1}
+\subsubsection{Question}
+Let $C$ denote the unit circle in the plane. Suppose $f:C \to C$ is a map which is not homotopic to the identity. Prove that $f(x)=-x$ for some point $x$ of $C$.
+\subsubsection{Answer}
+\begin{proof}
+Let $f:C \to C$ be a map such that  $f(x)\neq-x$ for any point $x$ of $C$. We shall demonstrate that $f$ is homotopic to the identity. But notice that this is just a special case of Example 2 Page 89 which states that if $f,g:X \to S^n$ are maps which never give a pair of antipodal points when evaluated at a point of $X$ then $f$ and $g$ are homotopic. Since we have that $f(x)\neq-x$ for every point $x$ of $C$ this assumption is satisfied if we take $g(x)=x$ to be the identity function so we are done.
+\end{proof}
+
+\subsection{Problem 5}
+\subsubsection{Question}
+Let $f:X \to S^n$ be a map which is not onto. Prove that $f$ is \emph{null homotopic}, that is to say $f$ is homotopic to a map which takes all of $X$ to a single point of $S^n$
+\subsubsection{Answer}
+\begin{proof}
+Since $f$ is not surjective there exists some point say $y$ of $S^n$ such that $f(x) \neq y$ for any choice of $x$. Take $z$ to be a point antipodal from $y$. Now take $g: X \to S^n$ defined by $g(x)=z$ to be a constant function. Now the assumptions of Example 2 are satisfied for $f$ and $g$ so, they are homotopic. Thus, $f$ is null homotopic as desired.
+\end{proof}
+
+\subsection{Problem 6}
+\subsubsection{Question}
+As usual, $CY$ denotes the cone on $Y$. Show that any two maps $f, g:X\to CY$ are homotopic.
+\subsubsection{Answer}
+\begin{proof}
+Any map $f: X \to CY$ is homotopic to the constant map $g: X \to CY$ defined by $g(x)=(x,1)$ (that is the `tip' of the cone) via the straight line homotopy. It is useful to think of $f$ as two functions $f_x: X \to Y$ and $f_i : X \to [0,1]$. With this we express our homotopy $F$ by 
+\[F(x,t)=(f_x(x),f_i(x)(1-t)+t)\]
+Since homotopy is an equivalence relation this suffices to prove that any two maps $f:X \to CY$ are homotopic.
+\end{proof}
+
+
+\subsection{Problem 7}
+\subsubsection{Question}
+Show that a map from $X$ to $Y$ is null homotopic if and only if it extends to a map from the cone on $X$ to $Y$.
+\subsubsection{Answer}
+\begin{proof}
+If a map $f: X \to Y$ extends to a map say $F : CX \to Y$ then $f$ is null homotopic. Recall that we defined $CX = X \times [0,1]$ modulo the equivalence relation which associates all points of the form $(x,1)$. So, if we define $F': X \to Y \times [0,1]$ by 
+\[F'(x,t)=F(x,t)\]
+we know that $F'$ is a map (continuous) by the continuity of $F$. Moreover, we know that $F'(x,1)=c$ for some constant $c$ since $F(x,1)=c$ for any $x$ (indeed all choices of x are the same in the cone). So, we have constructed a homotopy that takes $f$ to a point, and $f$ is null homotopic.
+
+Conversely let $f: X \to Y$ be null homotopic. Then there exists some homotopy say $F: X \times [0,1] \to Y$ which takes $f$ to a point. Then, we can extend $f$ to $F'$ by
+\[F'(x,t)=F(x,t)\]
+which is necessarily well defined since, as $F$ is a null homotopy $F(x,1)$ gives the same result regardless of $x$. Moreover $F'$ is continuous, since $F$ is. Thus, we have extended $f$ to $CX$ as desired.
+\end{proof}
+
+\end{document}

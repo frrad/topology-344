@@ -1,0 +1,83 @@
+\documentclass[10pt]{article}
+\setlength\headheight{14.5pt}
+\title{Homework}
+\author{Frederick Robinson}
+\date{15 January 2010}
+\usepackage{amsfonts}
+\usepackage{fancyhdr}
+\usepackage{amsthm}
+\pagestyle{fancyplain}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+
+\begin{document}
+
+\lhead{Frederick Robinson}
+\rhead{Math 344: Topology}
+
+   \maketitle
+
+
+
+\section{Chapter 3 Section 4}
+
+\subsection{Problem 23}
+
+\subsubsection{Question}
+Prove that $[0,1) \times [0,1)$ is homeomorphic to $[0,1] \times [0,1)$.
+\subsubsection{Answer}
+We define a mapping by 
+\[f(x,y) = \left\{\begin{array}{lr}
+(.5 x,2y-1 ) & y\geq .5 x +.5\\
+(x-y+.5,x ) & y < .5 x +.5 \mathrm{\ and\ } y \geq x\\
+(x+y-.5,y)& y< x \mathrm{\ and\ } y \geq 2x -1\\
+(-.5y+1,2x-1)&  y < 2x -1\\
+
+
+\end{array}
+\right.
+\]
+
+Since this is a composition of affine linear mappings which agree on the edges it is continuous with continuous inverse. Moreover it is easy to see that it is bijective.
+
+\subsection{Problem 25}
+
+\subsubsection{Question}
+Show that the diagonal map $\Delta: X \to X \times X $ defined by $\Delta(x) = (x,x)$ is indeed a map, and check that $X$ is Hausdorff if and only if $\Delta(X )$ is closed in $X \times X$.
+\subsubsection{Answer}
+We check that $\Delta$ is indeed a map first. Towards this end let $Y$ be an open set in the image of $X$ ($\Delta(X)$). Since the projection map is open as has been proven previously (Theorem 3.12), and the projection map just generates the preimage of an given set in image of $\Delta$ it must be that $\Delta$ is continuous as desired.
+
+\begin{proof}
+Suppose that $\Delta(X)$ is closed in $X \times X$. We wish to show that $X$ is Hausdorff. Since $\Delta(X)$ is closed in $X \times X$ it must be that every point not of the form $(x,x)\in (X,X)$ is not a limit point of $\Delta(X)$ thus, in particular each such point can be separated from every point of form $(x,x)$ by open sets and in particular basis sets (as each open set is the union of basis sets). This however implies that $X$ is Hausdorff. Since, if any $(x,x)$ and  $(x,y)$ can be separated by sets of the form $A\times B$ and $C\times D$ then any $x,y \in X$ can be separated by $B$ and $D$.
+\end{proof}
+
+\begin{proof}
+Suppose that $X$ is Hausdorff. We wish to show that $\Delta(X)$ is closed in $X \times X$. Since $X$ is Hausdorff any points $x,y \in X $ can be separated by open sets say $A$ and $B$. So, any points in the product space say $(x,y)$ and $(x,x)$ can be separated by (open) basis set as $A\times B$ and $A \times A$.
+
+Thus, $\Delta(X)$ is closed since it has no limit points not contained in itself.
+\end{proof}
+
+\section{Chapter 3 Section 5}
+
+
+\subsection{Problem 30}
+
+\subsubsection{Question}
+Let $X$ be the set of all points in the plane which have at least one rational coordinate. Show that $X$, with the induced topology, is a connected space.
+\subsubsection{Answer}
+It is clear that each $x \in X $ is path connected to the origin.  If $x=(x_1,x_2)$ with $x_1 \in \mathbb{Q}$ we have in particular
+\[\varphi(z)= \left\{ \begin{array}{lr}
+(x_1- 2 z (x_1),x_2)& z \leq .5 \\
+(0,x_2- 2 (z-.5) x_2)& z > .5
+ \end{array}\right.
+\]
+Similarly if $x_2 \in \mathbb{Q}$. This is a linear (and hence continuous) map from $[0,1] \to X$ which satisfies the requirements for a path.
+
+Therefore, each $x\in X $ is path connected to each other $x' \in X$ (if we have a path from $x$ to the origin and one from $x'$ to the origin we can just reverse teh latter, scale each by (1/2) and adjoin them to get a path from $x$ to $x'$). Since path connectedness implies connectedness we are done.
+
+
+
+
+
+\end{document}

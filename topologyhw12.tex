@@ -1,0 +1,69 @@
+\documentclass[10pt]{article}
+\setlength\headheight{14.5pt}
+\title{Homework}
+\author{Frederick Robinson}
+\date{5 May 2010}
+\usepackage{amsfonts}
+\usepackage{fancyhdr}
+\usepackage{amsthm}
+\pagestyle{fancyplain}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+
+\begin{document}
+
+\lhead{Frederick Robinson}
+\rhead{Math 344: Topology}
+
+   \maketitle
+
+\section{Chapter 5 Section 3}
+
+\subsection{Problem 20}
+\subsubsection{Question}
+Let $\pi: X \to Y$ be a covering map, $p \in Y$, $q \in \pi^{-1}(p)$, and $F: I \times I \to Y$ a map such that $F(0,t)= F(1,t)=p$ for $0 \leq t \leq 1$. For each $t$ in $[0,1]$ we have a path $F_t(s)=F(s,t)$ in $Y$ which begins at $p$. Let $\tilde{F}_t$ be its unique lift to a path in $X$ which begins at $q$, and set $\tilde{F}(s,t)=\tilde{F}_t(s)$. Check that $\tilde{F}$ is continuous and lifts $F$.
+\subsubsection{Answer}
+\begin{proof}
+By the homotopy lifting lemma there exists a unique lift of the homotopy $F$ say $\tilde{F}$. By properties of homotopy $\tilde{F}$ is both continuous and a lift of $F$. Moreover, this $\tilde{F}$ is precisely the $\tilde{F}$ as defined above since $\tilde{F}(s,t_0)$ is a lift of a path $F(s,t_0)$ going through $q$ and therefore unique by the path lifting lemma.
+\end{proof}
+
+\section{Chapter 10 Section 4}
+
+\subsection{Problem 18}
+\subsubsection{Question}
+If $\tilde{X}$ is a covering space of $X$, and $\tilde{Y}$ a covering space of $Y$, show that $\tilde{X} \times \tilde{Y}$ is a covering space of $X \times Y$.
+\subsubsection{Answer}
+\begin{proof}
+Given a point $(x,y) \in X \times Y$ there exist open sets in $X, Y$ containing $x, y$ such that their preimages in $\tilde{X}, \tilde{Y}$ satisfy the required properties. The product of these two open sets is open in the product space, and satisfies the required properties (by properties of product spaces).
+\end{proof}
+
+
+\subsection{Problem 20}
+\subsubsection{Question}
+Describe all the covering spaces of the torus, projective plane, Klein bottle, M\"{o}bius strip, and cylinder.
+\subsubsection{Answer}
+Covering spaces can be thought of as a variant of the square-with-edges-associated representation of a space in which multiple copies are attached according to the association of the edges.
+\begin{enumerate}
+\item Cylinder ($\mathbb{Z}$): Cylinder ($\mathbb{Z}$), $I \times \mathbb{R}$ ($1$)
+\item Torus ($\mathbb{Z} \times \mathbb{Z}$): Torus ($\mathbb{Z} \times \mathbb{Z}$), $\mathbb{R}^2$ ($1$), $\mathbb{R} \times S^1$ ($\mathbb{Z}$)
+\item M\"obius Strip ($\mathbb{Z}$):  M\"obius Strip ($\mathbb{Z}$), $I \times \mathbb{R}$ ($1$), Cylinder ($\mathbb{Z}$)
+\item Klein Bottle ($\mathbb{Z} * \mathbb{Z } / \left< a b a^{-1} b \right>$): Klein bottle ($\mathbb{Z} * \mathbb{Z } / \left< a b a^{-1} b \right>$),  $\mathbb{R}^2$ ($1$), Torus ($\mathbb{Z} \times \mathbb{Z}$), $\mathbb{R} \times S^1$ ($\mathbb{Z}$), M\"obius strip ($\mathbb{Z}$)
+\item $\mathbb{R}P^2$ ($\mathbb{Z}/2 \mathbb{Z}$): $\mathbb{R}P^2$ ($\mathbb{Z}/2 \mathbb{Z}$), $\mathbb{R}^2$ ($1$)
+\end{enumerate}
+
+\subsection{Problem 21}
+\subsubsection{Question}
+Find the group of covering transformations for each of the coverings of Problem 20.
+\subsubsection{Answer}
+Deck transformation are automorphisms of the collection of squares which model the covering space.
+\begin{enumerate}
+\item $\mathbb{Z} / n \mathbb{Z}$, $\mathbb{Z}$
+\item $\mathbb{Z} / m \mathbb{Z} \times \mathbb{Z} / n \mathbb{Z}$, $\mathbb{Z} \times \mathbb{Z}$, $\mathbb{Z} \times \mathbb{Z} / n \mathbb{Z}$
+\item $\mathbb{Z} / n \mathbb{Z}$, $\mathbb{Z}$, $\mathbb{Z} / n \mathbb{Z}$
+\item $\mathbb{Z} / m \mathbb{Z} \times \mathbb{Z} / n \mathbb{Z}$, $\mathbb{Z}  \times \mathbb{Z} $, $\mathbb{Z} / m \mathbb{Z} \times \mathbb{Z} / n \mathbb{Z}$,  $\mathbb{Z} / m \mathbb{Z} \times \mathbb{Z}$, $\mathbb{Z} $
+\item $1$, $\mathbb{Z} / 2 \mathbb{Z}$
+\end{enumerate}
+
+
+\end{document}

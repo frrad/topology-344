@@ -1,0 +1,87 @@
+\documentclass[10pt]{article}
+\setlength\headheight{14.5pt}
+\title{Homework}
+\author{Frederick Robinson}
+\date{21 February 2010}
+\usepackage{amsfonts}
+\usepackage{fancyhdr}
+\usepackage{amsthm}
+\pagestyle{fancyplain}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+
+\begin{document}
+
+\lhead{Frederick Robinson}
+\rhead{Math 344: Topology}
+
+   \maketitle
+
+
+
+\section{Chapter 6 Section 1}
+
+\subsection{Problem 1}
+
+\subsubsection{Question}
+Construct triangulations for the cylinder, the Klein bottle, and the double torus.
+\subsubsection{Answer}
+See attached drawings.
+
+\subsection{Problem 3}
+
+\subsubsection{Question}
+If $|K|$ is a connected space, show that any two vertices of $K$ can be connected by a path whose image is a collection of vertices and edges of $K$.
+\subsubsection{Answer}
+We can divide the vertices of a simplicial complex $|K|$ into equivalence classes $X_i$ where a member of an equivalence class is connected by edges to each other member.
+
+\begin{proof}
+Let $r, s, t$ be vertices of $K$.
+
+\emph{Symmetric}
+If $r$ is connected to  $s$ by an edge then $s$ is connected to $r$
+
+\emph{Reflexive }
+$s$ is related to itself by definition
+
+\emph{Transitive}
+if $r$ is connected to $s$ and $s$ is connected to $t$ then $r$ is connected to $t$ by edges  (in particular the union of the edge(s) connecting $s$ to $r$ and the edge(s) connecting $r$ to $t$)
+
+\end{proof}
+
+I claim that there is only one such class $X_1$.
+
+\begin{proof}
+Each vertex of the same simplicial complex is in the same equivalence class. Take an vertices $r$ and  say it has barycentric coordinates $(0,0,\dots,1,\dots,0)$. We can take a path 
+\[ \varphi(t) =(0,0,\dots,1-t,\dots,0) \quad t\in [0,1]\]
+along an edge to the vertex having barycentric coordinates $(0,0,\dots,0)$. So, since each vertex is in the same equivalence class as one fixed vertex they are all in the same class by definition of equivalence class.
+
+Now I claim that given two simplexes $T_i$ and $T_j$ in the same (connected) simplicial complex their vertices are members of the same equivalence class. 
+
+Say that our simplicial complex consists of the intersection of each of $T_i$ simplexes. Since it is connected we know that any $T_i$ has nontrivial intersection with some other $T_j$ and moreover that there is only one equivalence class of simplexes where we define two simplexes to be in the same equivalence class if they have nontrivial intersection (and transitivity). 
+
+Also, note that if two simplexes $T_i$ and $T_j$ have nontrivial intersection their vertices are in the same equivalence class of vertices since, they intersect on a face and therefore they in particular \emph{share} at least one vertex.
+
+So, these facts imply that each vertex is in the same equivalence class and, any two vertices can be connected by a path whose image is a collection of edges and vertices only as claimed.
+\end{proof}
+
+\subsection{Problem 7}
+
+\subsubsection{Question}
+Show that $S^n$ and $P^n$ are both triangulable.
+\subsubsection{Answer}
+$S^n$ and $P^n$ are both Riemann surfaces. Thus, they are therefore triangulable. To quote Wikipedia:
+
+''There is a standard proof that smooth closed surfaces can be triangulated (see Jost 1997). Indeed, if the surface is given a Riemannian metric, each point x is contained inside a small convex geodesic triangle lying inside a normal ball with centre x. The interiors of finitely many of the triangles will cover the surface; since edges of different triangles either coincide or intersect transversally, this finite set of triangles can be used iteratively to construct a triangulation."
+
+I have attached the proof from Jost.
+
+I will demonstrate this in particular for $S^n$.
+
+\begin{proof}
+\[ (B^n)^o \cong S^{n-1}\]
+\[K^n \cong B^n \Rightarrow (K^n)^o \cong ( B^n)^o \cong S^{n-1}\]
+Where $K^n$ is the $n$-simplex. So, since boundary of a simplex is a simplicial complex we have demonstrated what we wanted to show.
+\end{proof}
+\end{document}

@@ -1,0 +1,139 @@
+\documentclass[10pt]{article}
+\setlength\headheight{14.5pt}
+\title{Homework}
+\author{Frederick Robinson}
+\date{15 January 2010}
+\usepackage{amsfonts}
+\usepackage{fancyhdr}
+\usepackage{amsthm}
+\pagestyle{fancyplain}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+
+\begin{document}
+
+\lhead{Frederick Robinson}
+\rhead{Math 344: Topology}
+
+   \maketitle
+
+
+
+\section{Chapter 2 Section 1}
+
+\subsection{Problem 4}
+
+\subsubsection{Question}
+Find all the limit points of the following subsets of the real line:
+\begin{enumerate}
+\item $\{(1/m)+(1/n)\ |\ m,n=1,2,\dots\}$
+\item $\{(1/n) \sin{n}\ |\ n = 1,2,\dots\}$
+\end{enumerate}
+
+\subsubsection{Answer}
+In each of the following we show that the indicated points are limit points in open balls. Because such open balls are a basis for the Euclidian Topology, it follows that the indicated points are limit points for the topology
+
+That is, if a point $x$ has the property that every open ball containing it also includes members of a set $E\backslash x$, then every open set containing $x$ must also contain members of $E \backslash x$ as every open set may be written as a union of open balls.
+
+\begin{enumerate}
+\item The limit points of this set are precisely the members of $X$ for $E=\{1/n\ |\ n\in\mathbb{R}\} \cup \{0\}$
+
+Call the set in question $X=\{(1/m)+(1/n)\ |\ m,n=1,2,\dots\}$
+
+First we will show 
+
+\begin{lemma}\label{easy}
+$0$ is a limit point of the set $Y=\{1/n\ |\ n \in \mathbb{R}\}$
+\end{lemma}
+
+\begin{proof}
+Pick some $\epsilon>0$, then by the density of $\mathbb{Q}$ in $\mathbb{R}$ there is some $p/q \in \mathbb{Q}$ such that $p/q<\epsilon$. 
+
+However, since  $1/q<p/q<\epsilon$ and $1/q \in Y$ there is some member of $Y$ in $B_\epsilon 0$. Since $\epsilon$ was chosen arbitrarily it is clear that $0$ is a limit point of $Y$.\end{proof}
+
+Now we will demonstrate that each member of $E$ is indeed a limit point of $X$.
+
+\begin{proof}
+Fixing some $1/n$, we can write a subset of $X$ as $1/n+\{1/m\ |\ m \in \mathbb{N}\}$, but by Lemma \ref{easy} we know that a limit point of this is $1/n$. So all points of the form $1/n\ n\in\mathbb{N}$ are limit points of $X$.
+
+Moreover, fixing $m=n \in \mathbb{N}$ we observe that there is a subset of $X$ given by as $2 \cdot \{1/m\ |\ m \in \mathbb{N}\}$, and so by Lemma \ref{easy}, $0$ is a limit point of $X$.\end{proof}
+
+It remains to show that each $x\in \notin E$ for is not a limit point of $X$
+
+\begin{proof}Let $x \notin E$. Now, for each $1/n \ n\in\mathbb{N}$ there is some other $1/m\ m\in\mathbb{N}$ for which $d(1/m+1/n,x)$ is minimized.
+
+For all but finitely many $1/n$ this is just whichever $1/m$ minimizes $d(1/m,x)$. For, all but finitely many $1/n$ have $1/n \in B_\epsilon 0 $ given $\epsilon>0$ and given $1/l, 1/k$ with $d(1/l,x) < d(1/k,x)$ there is some $\epsilon >0$ with $d(1/l+\delta,x) < d(1/k+\delta,x)$ for all $\delta<\epsilon$.
+
+This established, we suppose towards a contradiction that $X \cap B_\epsilon x$ is nonempty for all $\epsilon >0$. In particular each $B_\epsilon x$ must contain a point of the form  $1/n+1/m$ for some $n \in \mathbb{N}$ and $m$ chosen so as to minimize this distance. 
+
+However, there is but a finite set of such $m$ as we have previously demonstrated. Thus, each $B_\epsilon x$ must contain a point of the form  $1/n+1/m$ for some $n \in \mathbb{N}$ and $m$ one of a finite set of points. Yet, the limit points of a finite union consist of the union of the limit points, and we know by Lemma \ref{easy} that the limit points of $\{a+1/m\ |\ m \in \mathbb{N}\}$ is just $a$. So, this is a contradiction as $x \notin E$ is not of the form $1/m\ m \in \mathbb{N}$.\end{proof}
+
+\item The only limit point of this set is $0$.
+
+First we prove that $0$ is a limit point.
+\begin{proof} Since we know that $\sin{x} \in [-1,1]$ for any choice of $x$ it must be that $(1/n) \sin{n} \in [-1/n,1/n]$.
+
+ Pick some $\epsilon >0$, then the neighborhood of $0$ given by $B_\epsilon 0$ must contain a point in our set. 
+ 
+ In particular find some $p/q \in \mathbb{Q}$ such that $p/q < \epsilon$ (this is always possible by density of $\mathbb{Q}$ in $\mathbb{R}$). Then clearly $1/q<p/q<\epsilon$ but as we showed earlier $(1/q)\sin{q}\leq 1/q$ and $(1/q)\sin{q}$ is in our set. 
+ 
+ So, we have demonstrated a member of our set in $B_\epsilon 0$ and $0$ is a limit point of the set, as desired.
+\end{proof}
+
+Now we need to show that no other $x \in \mathbb{R}$ is a limit point of our set.
+
+\begin{proof}
+All but finitely many points of our set are within some arbitrarily small neighborhood of $0$. That is, given $\epsilon>0$ all but finitely many points are in $B_\epsilon 0$. 
+
+Our proof above, that $0$ is a limit point may be extended to show this. As we observed above $(1/n) \sin{n} \in [-1/n,1/n]$. Hence, because for each $m<n \in \mathbb{N}$ we have $(1/n)\sin{n}<1/m$ and we have at least one member of the set in any $B_\epsilon 0$ we must have all but finitely many members of the set in such a ball. Each successive member of the set must also be in the ball.
+
+So, now that we have established that all but finitely many points are in $B_\epsilon 0$ it is clear that our set has no other limit points. For, given $x \neq 0$ we may find some neighborhood of $0$ not containing $x$. Since this neighborhood contains all but finitely many points of the set, any neighborhood of $x$ which does not intersect the chosen neighborhood of $0$ contains only finitely many elements. Then, there must be an element of least distance. A ball of smaller radius than this least distance contains only $x$ of all the elements in our set.
+
+More concretely, we can take $\epsilon = x/2$. $B_\epsilon 0$ contains all but finitely many elements from the set. Moreover, by the triangle inequality $B_\epsilon x $ contains none of the elements in $B_\epsilon 0$ and therefore contains at most finitely many elements. 
+
+So, there must be an element $y$ in our set with minimum $d(y,x)$. Therefore $B_{y/2}x$ contains no elements of the set, and $x\neq0$ is not a limit point.
+\end{proof}
+\end{enumerate}
+
+
+\subsection{Problem 7}
+
+\subsubsection{Question}
+Suppose $Y$ is a subspace of $X$. Show that a subset of $Y$ is closed in $Y$ if it is the intersection of $Y$ with a closed set in $X$. If $A$ is a subset of $Y$, show that we get the same answer whether we take the closure of $A$ in $Y$, or intersect $Y$ with the closure of $A$ in $X$.
+\subsubsection{Answer}
+Let $Y$ be a subspace of $X$. We claim that a subset of $Y$ is closed in $Y$ if it is the intersection of $Y$ with a closed set in $X$.
+
+\begin{proof}
+Let $C$ be a closed set in $X$. If $C^C\cap Y= \emptyset$ then $C \cap Y = Y$ and we are done.
+
+Otherwise, by definition $X^C$  is open in $X$. Hence, $X^C \ \cap Y $ is open in $Y$, and $Y  \backslash (X^C \cap Y)^C=Y \backslash (X \cup Y^C) = Y\backslash X$ is closed in $Y$. 
+
+So we have shown that if a set is closed in $X$, then its intersection with $Y$ is also closed as desired. \end{proof}
+
+
+Now we claim that if $A$ is a subset of $Y$ then $\overline{A|_Y}=Y\cap \overline{A}$
+
+\begin{proof}
+If $x\in X$ is a member of the closure of $A$ in $X$. Then, by definition, some $a \in A$ is in $O$ for every closed set $O$ containing $x$. So, $Y \cap \overline{A}$ consists of all those points $y\in Y$ for which some $a \in A$ is in $O$ for every closed set $O$ containing $y$.
+
+Thus, each $y \in Y \cap \overline{A}$ is also in $\overline{A|_Y}$ as each closed set in $Y$ is the intersection of a closed set in $X$ and $Y$ by the first part, and $A \subset Y$.
+
+Now for the reverse inclusion let $y \in \overline{A|_Y}$. Then every closed set in $Y$ containing $A$ also contains $y$. However if a set is closed in $Y$ it is the intersection of $Y$ with a set which is closed in $X$. Thus, every closed set in $X$ which intersects $Y$ and contains $A$ must also contain $y$. All sets in $X$ which contain $A$ intersect $Y$ though since $A\subset Y$. Hence, every closed set in $X$ containing $A$ also contains $y$, and $y$ is a member of the closure of $A$ in $Y$ and $A \cap \overline{A}$.
+
+\end{proof}
+\subsection{Problem 8}
+
+\subsubsection{Question}
+Let $Y$ be a subspace of $X$ . Given $A \subseteq Y$, write $\r{A}_Y$ for the interior of $A$ in $Y$, and $\r{A}_x$ for the interior or $A$ in $X$. Prove that $\r{A}_X \subseteq \r{A}_Y$, and give an example to show the two may not be equal.
+\subsubsection{Answer}
+
+$\r{A}_X \subseteq \r{A}_Y$
+\begin{proof}
+Let $a \in \r{A}_X$. Then, there is at least one open set $E \subset X$ contained wholly in $A$ with $x \in E$. 
+
+Open sets in $Y$ may be written as the intersection of open sets in $X$ and the entire set $Y$.  Because $A \subset Y$ there is at least one open set in $Y$ contained wholly in $A$ and containing x, namely $E \cap Y$. \end{proof}
+
+Let $X=\mathbb{R}$ and $Y=\{y\ |\ |y|\leq 1\}$. The interior of $Y$ in $Y$ is just $Y$ since open sets are their own interiors, and topological spaces are open in themselves. However, the interior of $Y$ in $X$ is $\{ x \ |\ |x|<1\}$.
+
+\end{document}

@@ -1,0 +1,88 @@
+\documentclass[10pt]{article}
+\setlength\headheight{14.5pt}
+\title{Homework}
+\author{Frederick Robinson}
+\date{15 January 2010}
+\usepackage{amsfonts}
+\usepackage{fancyhdr}
+\usepackage{amsthm}
+\pagestyle{fancyplain}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+
+\begin{document}
+
+\lhead{Frederick Robinson}
+\rhead{Math 344: Topology}
+
+   \maketitle
+
+
+
+\section{Chapter 3 Section 3}
+
+\subsection{Problem 16}
+
+\subsubsection{Question}
+Suppose $X$ is locally compact and Hausdorff. Given $x \in X$ and a neighbourhood $U$ of $x$, find a compact neighborhood of $x$ which is contained in $U$.
+\subsubsection{Answer}
+Let $x \in X $ be a point in a topological space which is both locally compact and Hausdorff. I claim that given a neighborhood $U$ of $x$ there is some compact neighborhood of $x$ which is contained in $U$.
+
+\begin{proof}
+There exists some open strict subset of $U$ say $L$. So moreover we have $\overline{O} \subset U$. Since $\overline{O}$ is closed and a subset of $U$. Now we can find the intersection of $\overline{O}$ and the neighborhood of $x$ which is compact. Since both must be closed their intersection must be closed. Hence we have constructed a space which contains $x$, is a subset of $U$ and is compact as desired.
+\end{proof}
+
+
+\subsection{Problem 19}
+
+\subsubsection{Question}
+Let $X$ and $Y$ be locally compact Hausdorff spaces and let $f:X \to Y$ be an onto map. Show $f$ extends to a map from $X \cup \{\infty\}$ onto $Y \cup \{ \infty\} $ if and only if $f^{-1}(K)$ is compact for each compact subset $K$ of $Y$. Deduce that if $X$ and $Y$ are homeomorphic space then so are their one-point compactifications. Find two spaces which are not homeomorphic but which have homeomorphic one-point compactifications.
+\subsubsection{Answer}
+We will first prove ($\Rightarrow$) that $f$ extends to a map from $X \cup \{\infty\}$ onto $Y \cup \{ \infty\} $ if $f^{-1}(K)$ is compact for each compact subset $K$ of $Y$. 
+\begin{proof}
+Let $L \subset Y \cup \{\infty\}$ be an open set. There are two cases. Either $L$ does not contain $\infty$ in which case it must have an open inverse image since $f$ is a map, or $L$ does contain $\infty$.  If this latter is the case it must be that $L^C$   is compact in $Y$ by definition of one-point compactification and therefore that $f^{-1}(L^C)$ is compact in $X$ by assumption. Thus we have $f^{-1}(L)$ is open in $X \cup \{\infty\}$ as desired.
+\end{proof}
+
+Now we show  ($\Leftarrow$) that if $f$ extends to a map from $X \cup \{\infty\}$ onto $Y \cup \{ \infty\} $ then $f^{-1}(K)$ is compact for each compact subset $K$ of $Y$. 
+\begin{proof}
+Suppose towards a contradiction that there exists a compact subset $K$ of $Y$ such that $f^{-1}(K)$ is not compact, and that $f$ extends to a map $f'$ from $X^*$ to $Y^*$. Then $\infty \cup f'(f^{-1}(K^C))$ is not open yet $ \infty \cup K^C $ is open. Contradiction.
+\end{proof}
+
+If $X$ and $Y$ are homeomorphic by a homeomorphism $f$ then since preimages of compact sets under homeomorphisms are themselves compact it must be that the compactifications of $X$ and $Y$ $X^*$ and $Y^*$ are homeomorphic by the natural extension of $f$ to $f':X^* \to Y^*$. 
+
+The set $X = (-\infty,-3] \cup [3,\infty)$ has one point compactification $X^*$ with $X^*\cong [a,b]$. The set $Y = (1,2]$ has one point compactification $Y^*$  so that $Y^* \cong [a,b]$. However since clearly $X$ and $Y $ are not homeomorphic since $X$ is not connected though $Y$ is.
+
+\section{Chapter 3 Section 6}
+
+
+\subsection{Problem 40}
+
+\subsubsection{Question}
+If $A$ and $B$ are path-connected subsets of a space, and if $A \cap B$ is nonempty, prove that $A \cup B$ is path-connected.
+\subsubsection{Answer}
+
+First I prove 
+\begin{lemma}
+Any two paths $P_1$ and $P_2$ in a topological space $X$ which have nonempty intersection can be connected to form a new path say $P$ which goes from the start of $P_1$ to the end of $P_2$.
+\end{lemma}
+\begin{proof}
+In particular say that the first point of intersection (defined as the leat $x, y$ such that $P_1(x) = P_2(1-y)$  is $z$. Then define $P$ by taking $P_1$ from $0 \to x$ and $P_2 $ from $y \to 1$. $P$ is a path. 
+
+In particular take an open set $O \subset X \cap P$. If the open set is wholly contained in the part of $P$ which is taken from $P_1$ or $P_2$ we are done by the continuity of $P_1$ and $P_2$. Thus, the remaining case is that there is a nonempty intersection $O \cap P_1$ and $O \cap P_2$. However this means also that $P_1(x) = P_2(1-y) \in O$ so the preimage of $O$ $P^{-1}(O$ is of the form $(a,x] \cup [x,b)$ for some $a$ and $b$ and is therefore open.
+
+So we have proven that two paths may be connected to form a new path from the beginning of the first path to the end of the second.
+\end{proof}
+
+
+Let $A$ and $B$ be path-connected subsets of a space $X$ with nonempty intersection. I claim that $A \cup B$ is path connected.
+\begin{proof}
+Since $A\cap B$ is nonempty it in particular contains at least one point, say $x$. Since $x \in A $ and $A$ is path connected there exists some path from any point $a$ to $x$. Similarly since $B$ is path connected and $x \in B$ there exsits a path from any point $b \in B$ to $x$. 
+
+Thus, since two paths can be connected  to form a new path by the lemma  there exists a path from any point $a \in A$ to any point $b\in B$. 
+\end{proof}
+
+
+
+
+\end{document}

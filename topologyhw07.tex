@@ -1,0 +1,103 @@
+\documentclass[10pt]{article}
+\setlength\headheight{14.5pt}
+\title{Homework}
+\author{Frederick Robinson}
+\date{28 February 2010}
+\usepackage{amsfonts}
+\usepackage{fancyhdr}
+\usepackage{amsthm}
+\pagestyle{fancyplain}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+
+\begin{document}
+
+\lhead{Frederick Robinson}
+\rhead{Math 344: Topology}
+
+   \maketitle
+
+
+
+\section{Chapter 7 Section 1}
+
+\subsection{Problem 4}
+
+\subsubsection{Question}
+What is the connected sum of a torus and a projective plane?
+\subsubsection{Answer}
+
+
+A projective plane is homeomorphic to a sphere with a M\"{o}bius strip glued in. Moreover we know that a torus is a sphere with a handle glued on. Then, the connected sum of these two objects is a sphere connected sum a handle and a M\"{o}bius strip. 
+
+Then, by Theorem 7.2 we know that this is just equivalent to  a sphere connected sum with 3 M\"{o}bius strips.
+
+Thus, the object we arrive at is of type 3 with precisely three M\"{o}bius strips. 
+
+\section{Chapter 7 Section 3}
+
+\subsection{Problem 11}
+
+\subsubsection{Question}
+Prove lemma (7.8).
+
+\emph{Let $K$, $L$ be simplicial complexes which intersect in a common subcomplex, then $\chi(K \cup L ) = \chi(K) + \chi(L) - \chi(K\cap L)$}
+\subsubsection{Answer}
+\begin{proof}
+Recall that the Euler Characteristic is defined as 
+\[\chi(L) = \sum_{i=0}^n (-1)^i \alpha_i\]
+where $\alpha_i$ is the number of $i$-simplexes in $L$.
+
+Now, observe that each simplex in the union of two simplicial complexes is in one, the other or both simplicial complex. With this in mind we shall label those simplexes in just $L$ by $\alpha_i$, those only in $K$ as $\beta_j$ where the index denotes the order of the simplex. Those which are in both shall be called $\mu_k$. This notation established we can say that
+\[\chi(K) + \chi(L) = \sum_{i=0}^n (-1)^i \alpha_i + \sum_{j=0}^m (-1)^j \beta_j + 2\sum_{k=0}^z (-1)^k \mu_k \]
+Since the simplexes in the union of the two simpicial complexes are those which are in each complex only, together with ``one copy" of each of those which are in both we can write
+\[\chi(K\cup L)= \sum_{i=0}^n (-1)^i \alpha_i + \sum_{j=0}^m (-1)^j \beta_j + \sum_{k=0}^z (-1)^k \mu_k \]
+but since
+\[\chi(K \cap L)= \sum_{k=0}^z (-1)^k \mu_k \]
+observe that
+\[ \chi(K) + \chi(L) - \chi(K \cap L) = \sum_{i=0}^n (-1)^i \alpha_i + \sum_{j=0}^m (-1)^j \beta_j + 2\sum_{k=0}^z (-1)^k \mu_k  -  \sum_{k=0}^z (-1)^k \mu_k \]
+\[= \sum_{i=0}^n (-1)^i \alpha_i + \sum_{j=0}^m (-1)^j \beta_j + \sum_{k=0}^z (-1)^k \mu_k =  \chi(K\cup L)\]
+as claimed. 
+\end{proof}
+
+\subsection{Problem 12}
+
+\subsubsection{Question}
+Prove lemma (7.9) by induction on the number of simplexes in the complex.
+
+\emph{The Euler characteristic is left unchanged by barycentric subdivision.}
+\subsubsection{Answer}
+
+
+\begin{proof}
+\emph{Base Case: }Given a simplex of arbitrary dimension we know that its barycentric subdivision has the same euler characteristic.
+
+The Euler characteristic of a $k$-simplex is just 1 since the number of $l$-simplexes contained in a $k$-simplex is give by 
+\[\left( \begin{array}{c} k+1 \\k-l \end{array}\right).\]
+Summing with alternating sign over these we get the Euler Characterisitic as 
+\[\sum_{l=0}^k (-1)^l \left( \begin{array}{c} k+1 \\k-l \end{array}\right) = 1\]
+
+Now we note that the barycentric subdivision of a $k$-simplex can be divided into 3 parts. The interior, the exterior, and the barycenter. The interior contains a $(k+1)$-simplex for every $k$-simplex on the exterior. Thus, the Euler characteristic of the interior together with the exterior is just 0. This is one less than the Euler characteristic of the barycentric subdivision however since it doesn't take into account the barycenter of the entire simplex. Taking this into account we see that the barycentric subdivision of a $k$-simplex has Euler Characteristic 1. 
+
+Thus, we have proven that the Euler characteristic of the barycentric subdivision of a $k$-simplex is the same as the Euler characteristic of the simplex itself for any $k$.
+
+\emph{Inductive Step: }
+We can write any simplicial complex $L$ as the union of one of its simplexes of maximal dimension say $K$ union another simplicial complex $M$ to get $L = K \cup M$.
+
+Moreover, we know that the barycentric subdivision of this union is the same as the union of the barycentric subdivisions since the shared face is divided the same way in each of $K$, $M$.
+
+Then, since we know that the intersection of two simplicial complexes whose union is a simplicial complex, is itself a simplicial complex we can apply from the previous problem:
+\[\chi(K \cup M ) = \chi(K) + \chi(M) - \chi(K\cap M)\]
+That is, since each of $K$, $M$, and $K \cap M$ has dimension less than $L$ the inductive hypothesis says that their barycentric subdivision preserves Euler Characteristic, and therefore
+\[L^1=K^1 \cup M^1 \Rightarrow \chi(L^1) = \chi(K^1 \cup M^1) =  \chi(K^1) + \chi(M^1) - \chi(K^1\cap M^1) \]
+\[=  \chi(K) + \chi(M) - \chi(K\cap M) = \chi(L)\]
+as desired.
+\end{proof}
+
+
+
+
+
+
+\end{document}

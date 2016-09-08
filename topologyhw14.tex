@@ -1,0 +1,87 @@
+\documentclass[10pt]{article}
+\setlength\headheight{14.5pt}
+\title{Homework}
+\author{Frederick Robinson}
+\date{17 May 2010}
+
+
+\input xy
+\xyoption{all}
+
+\usepackage{amsfonts}
+\usepackage{fancyhdr}
+\usepackage{amsthm}
+\pagestyle{fancyplain}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+
+\begin{document}
+
+\lhead{Frederick Robinson}
+\rhead{Math 344: Topology}
+
+   \maketitle
+
+\section{Chapter 8 Section 3}
+
+\subsection{Problem 11}
+\subsubsection{Question}
+Calculate the homology groups of the following complexes: (a) three copies of the boundary of a triangle all joined together at a vertex; (b) two hollow tetrahedra glued together along an edge; (c) a complex whose polyhedron is homeomorphic to the M\"obius strip; (d) a complex which triangulates the cyclinder.
+\subsubsection{Answer}
+
+
+\subsection{Problem 16}
+\subsubsection{Question}
+Calculate the homology group of a triangulation of the sphere with $k$ holes.
+\subsubsection{Answer}
+
+\section{Chapter 8 Section 5}
+
+\subsection{Problem 20}
+\subsubsection{Question}
+Prove lemma (8.5)
+
+If $\psi: C(L) \to C(M)$ is a second chain map then $\psi \circ \phi: C(K) \to C(M) $ is a chain map and $(\psi \circ \phi)_* = \psi_* \circ \phi_*: H_q(K) \to H_q(M)$.
+\subsubsection{Answer}
+The following diagrams commute for all $q$.
+\[
+\xymatrix{C_q(K ) \ar[r]^{\phi_q} \ar[d]_\partial & C_q(L)  \ar[d]_\partial \\
+C_{q-1}(K) \ar[r]^{\phi_{q-1}}& C_{q-1}(L)}
+\quad
+\xymatrix{C_q(L ) \ar[r]^{\psi_q} \ar[d]_\partial & C_q(M)  \ar[d]_\partial \\
+C_{q-1}(L) \ar[r]^{\psi_{q-1}}& C_{q-1}(M)}
+\]
+Therefore, the following diagram commutes, again for all $q$.
+\[
+\xymatrix{C_q(K ) \ar[r]^{\phi_q} \ar[d]_\partial  & C_q(L ) \ar[r]^{\psi_q} \ar[d]_\partial & C_q(M)  \ar[d]_\partial \\
+C_{q-1}(K) \ar[r]^{\phi_{q-1}}& C_{q-1}(L) \ar[r]^{\psi_{q-1}}& C_{q-1}(M)
+}\]
+Rewriting we have what we wanted to prove
+\[
+\xymatrix{C_q(K ) \ar[r]^{\psi_q \circ \phi_q} \ar[d]_\partial  & C_q(M)  \ar[d]_\partial \\
+C_{q-1}(K) \ar[r]^{\psi_{q-1} \circ \phi_{q-1}}& C_{q-1}(M)
+}\]
+
+Now 
+\begin{eqnarray*}
+(\psi \circ \phi)_* H_q(K)&=&(\psi \circ \phi)_*  \ker{\partial} C_q(K) / \mathrm{Im\ }{\partial C_{q+1}(K) }\\
+&=&  \ker{\partial} (\psi \circ \phi)C_q(K) / \mathrm{Im\ }{\partial (\psi \circ \phi) C_{q+1}(K) }\\
+&=&  \ker{\partial} \psi C_q(K) / \mathrm{Im\ }{\partial \psi C_{q+1}(K) } \circ  \ker{\partial} \phi C_q(K) / \mathrm{Im\ }{\partial  \phi C_{q+1}(K) } \\
+&=&  (\psi _* \circ \phi _*) H_q(K)
+\end{eqnarray*}
+
+\subsection{Problem 21}
+\subsubsection{Question}
+Check that the subdivision map $\chi: C(K) \to C(K') $ is a chain map.
+\subsubsection{Answer}
+Let $\sigma$ be a typical oriented $q$-simplex of $K$. In particular say $\sigma = (v_0, v_1, \dots, v_k, v_{k+1}, \dots, v_q)$. Now we compute
+\[ \chi_q(\sigma) = \sum_{i=0}^k (-1)^i (v,v_0, \dots, \hat{v_i}, \dots, v_k, v_k+1, \dots, v_q)\]
+and
+\[\partial \chi_q(\sigma) = \sum_{j=0}^q \sum_{i=0}^k (-1)^i (v,v_0, \dots,\hat{v_j},\dots, \hat{v_i}, \dots, v_k, v_k+1, \dots, v_q) .\]
+Finally we compute
+\[\partial (\sigma)= \sum_{j=0}^q  (v_0, \dots,\hat{v_j}, \dots, v_k, v_k+1, \dots, v_q) \]
+and
+\[\partial \chi_q(\sigma) =  \sum_{i=0}^k \sum_{j=0}^q (-1)^i (v,v_0, \dots,\hat{v_j},\dots, \hat{v_i}, \dots, v_k, v_k+1, \dots, v_q) .\]
+So interchanging the order of summation we see that $\partial \chi_q = \chi_{q-1} \partial$ as desired.
+\end{document}

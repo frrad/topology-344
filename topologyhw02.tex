@@ -1,0 +1,82 @@
+\documentclass[10pt]{article}
+\setlength\headheight{14.5pt}
+\title{Homework}
+\author{Frederick Robinson}
+\date{25 January 2010}
+\usepackage{amsfonts}
+\usepackage{fancyhdr}
+\usepackage{amsthm}
+\pagestyle{fancyplain}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+
+\begin{document}
+
+\lhead{Frederick Robinson}
+\rhead{Math 344: Topology}
+
+   \maketitle
+
+
+
+\section{Chapter 2 Section 1}
+
+\subsection{Problem 12}
+
+\subsubsection{Question}
+Show that if $X$ has a countable base for its topology, then $X$ contains a countable dense subset. A space whose topology has a countable base is called a \emph{second countable} space. A space which contains a countable dense subset is said to be \emph{seperable}
+\subsubsection{Answer} 
+Let $B$  be a countable basis for a topology on $X$. Construct a set by choosing one point from each $b \in B$. This set must be dense in $X$ since a member of the set is in each basis set for the topology. All open sets may be expressed as a union of basis sets.  Therefore there is at least one member of the set in each open set of the topology. Moreover, this set is countable because there is one member of the set for each of a countable collection of sets (the basis).
+
+\section{Chapter 2 Section 2}
+
+\subsection{Problem 15}
+
+\subsubsection{Question}
+Let $f:\mathbb{E}^1 \to \mathbb{E}^1$ be a map and define its graph $\Gamma_f : \mathbb{E}^1 \to \mathbb{E}^2$ by $\Gamma_f(x) = (x,f(x))$. Show that $\Gamma_f$ is continuous and that its image (taken with the topology induced from $\mathbb{E}^2$) is homeomorphic to $\mathbb{E}^1$.
+\subsubsection{Answer}
+We claim that $\Gamma_f $ is continuous.
+
+\begin{proof}
+Take an open set say $X$ in the image of $\Gamma_f$. By definition of open sets in a product topology it must be that that $X$ is an arbitrary union of sets of the form $A \times B$ for open sets $A$ and $B$ in $\mathbb{E}^1$. However this implies that the preimage of $X$ is the union of arbitrarily many sets $A$ which are open in $\mathbb{E}$ since  $\Gamma_f(x) = (x,f(x))$. So the preimage of $X$ is open and $\Gamma_f$ is continuous.
+\end{proof}
+
+Since we have shown already that $\Gamma_f$ is continuous it remains only to show that it is bijective with continuous inverse. The mapping is injective since the first coordinate of each point in the output of the function is just the input. If there were two points $x$, $y$ such that $\Gamma(x)= \Gamma(y)$ it would mean in particular that the first coordinates of $\Gamma(x) $ and $\Gamma(y)$ were the same, which in turn would mean that $x=y$. Thus, $\Gamma$ is injective. Moreover the mapping from the domain of a function to its image is surjective by definition. 
+
+Now that we have shown our function to be a bijection we claim that its inverse is continuous. That is, we claim that the projection mapping defined by $\pi(x,y) = x$
+ is  a continuous mapping from graphs to $\mathbb{E}^1$
+ 
+ \begin{proof}
+Let $X$ be an open set in the image of $\pi$. Then, its preimage must have been open since,
+Suppose  not. This would imply that there is some neighbor hood of the preimage which contains its limit points. In particular there is a neighborhood of the preimage in which every sequence converges to some point in this neighborhood. Since this sequence is of the form $(f(x),x)$ there is a corresponding sequence in the image. Moreover there is a bijection between such sequences by the above.
+
+Since this is the case, for each sequence in the image we examine the corresponding sequence in the preimage. Since every such sequence in the preimage converges by hypothesis it must be that every sequence converges after applying the map since open neighborhoods remain open after the projection mapping. 
+
+Hence, each sequence in the image converges and the image is closed. This is a contradiction.
+\end{proof} 
+
+\subsection{Problem 21}
+
+\subsubsection{Question}
+Show that the \emph{unit ball} in $\mathbb{E}^n$ (the set of points whose coordinates satisfy $x_1^2+ \dots + x_n^2 \leq 1$) and the \emph{unit cube} (points whose coordinates satisfy $|x_i|\leq 1$, $1\leq i \leq n$) are homeomorphic if they are both given the subspace topology from $\mathbb{E}^n$.
+\subsubsection{Answer}
+
+
+Consider the mapping $f: C \to B$ defined by 
+\[f(\vec{x}) = \frac{\vec{x}}{|\frac{1}{a} \vec{x} |} \quad f(0)=0\]
+where $a= \max{(x_i)}$.
+
+We will demonstrate that this mapping is continuous and bijective. Since it is a mapping from a compact space to a Hausdorff space this suffices to show that it is a homeomorphism.
+
+\begin{proof}
+The mapping defined above is surjective since it "preserves direction" (that is the ratio of each component of a vector is preserved by the mapping) and because given an arbitrary direction it maps an element of the first set to each magnitude in the second on the interval $(0,1]$.
+
+This should be clear, but if not consider this. We map a vector $\vec{x}$ to some scalar multiple of this vector, so it preserves direction as claimed. Moreover, given a direction $\hat{v}$ there is a vector in that direction with any given magnitude. We can make $|(1/a) \vec{x}|$ any thing in the interval $(0,|\vec{x}|)$ since, with a fixed $\hat{v}$ the component which is maxima is fixed, and may vary anywhere on the interval $(0,1]$.
+
+By analysis we know that this mapping is continuous as it is the composition of continuous functions, and the quotient of continuous (nonzero denominator) functions.
+\end{proof}
+
+
+
+\end{document}

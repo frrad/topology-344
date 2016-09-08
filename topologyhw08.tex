@@ -1,0 +1,68 @@
+\documentclass[10pt]{article}
+\setlength\headheight{14.5pt}
+\title{Homework}
+\author{Frederick Robinson}
+\date{8 March 2010}
+\usepackage{amsfonts}
+\usepackage{fancyhdr}
+\usepackage{amsthm}
+\pagestyle{fancyplain}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+
+\begin{document}
+
+\lhead{Frederick Robinson}
+\rhead{Math 344: Topology}
+
+   \maketitle
+
+
+
+\section{Chapter 7 Section 4}
+
+\subsection{Problem 17}
+
+\subsubsection{Question}
+The straight lines shown in Fig. 7.16 represent three simple closed curves in the Klein bottle. Thicken each curve, decide whether the result is a cylinder or a M\"{o}bius strip, and describe the effect of doing surgery along the curve.
+\subsubsection{Answer}
+Let's call the diagonal cut 1, the cut which connects the sides which are oriented in the same direction 2, and the cut which connects sides oriented in opposite directions 3.
+
+\begin{enumerate}
+\item If we thicken the first line we get a M\"{o}bius strip. Thus, doing surgery along this line results in the projective plane.
+\item If we thicken this line we get a cylinder. Doing surgery along this line therefore results in sphere.
+\item Thickening this line results in a M\"{o}bius strip. We may therefore conclude again that  doing surgery along this line results in the projective plane.
+\end{enumerate}
+
+\subsection{Problem 18}
+
+\subsubsection{Question}
+Show that the surface illustrated in Fig. 7.17 is homeomorphic to one of the standard ones using the procedure of theorem (7.14).
+\subsubsection{Answer}
+The surface in question is homeomorphic to a sphere with 5 handles. See attached illustration. 
+\subsection{Problem 19}
+
+\subsubsection{Question}
+Let $X \supset Y \supset Z$ be three concentric discs in the plane. Find a homeomorphism from $X$ to itself which is the identity on the boundary circle of $X$ and which throws $Y$ onto $Z$.
+\subsubsection{Answer}
+Let the discs $X$, $Y$, $Z$ in $\mathbb{R}^2$ be defined in polar coordinates with radii $r_x> r_y>r_z$ respectively. Define a mapping $\varphi: \mathbb{R}^2 \to \mathbb{R}^2$ as below
+\[\varphi(r,\theta) = \left\{ \begin{array}{ll}
+\displaystyle r \frac{r_z}{r_y }\hat{r} + \theta \hat{\theta} &r < r_y\\ \\
+\displaystyle \left( \frac{r r_x-r_x r_y-r r_z+r_x r_z}{r_x-r_y} \right) \hat{r} + \theta \hat{\theta} & r_y<r< r_z\\
+\end{array} \right.\]
+
+We check that these functions agree on their border first
+\[ \varphi(r=0)=0 \hat{r} \]
+\[r_y \frac{r_z}{r_y} = r_z = \left( \frac{r_y r_x-r_x r_y-r_y r_z+r_x r_z}{r_x-r_y} \right) \]
+\[ \varphi(r=r_x) = r_x \]
+
+This is a composition of affine linear functions which agree on their boundary and is therefore continuous with continuous inverse. Moreover it is a bijection on the set with $r < r_x$. Therefore it is a homeomorphism.
+
+Finally, it is easy to see in the above computation that it takes each point in with $r<r_y$ onto $r< r_z$ as desired. 
+
+
+
+
+
+\end{document}

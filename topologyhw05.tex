@@ -1,0 +1,100 @@
+\documentclass[10pt]{article}
+\setlength\headheight{14.5pt}
+\title{Homework}
+\author{Frederick Robinson}
+\date{15 February 2010}
+\usepackage{amsfonts}
+\usepackage{fancyhdr}
+\usepackage{amsthm}
+\pagestyle{fancyplain}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+
+\begin{document}
+
+\lhead{Frederick Robinson}
+\rhead{Math 344: Topology}
+
+   \maketitle
+
+
+
+\section{Chapter 3 Section 5}
+
+\subsection{Problem 31}
+
+\subsubsection{Question}
+Given the set of real numbers and the finite-complement topology. What are the components of the resulting space? Answer the same question for the half-open interval topology.
+\subsubsection{Answer}
+In the finite complement topology the open sets are those which have finite complements. In this particular instance this means that the open sets are those which are of form $\mathbb{R} \backslash \{x_1,  \dots , x_n\}$ for some points $x_1, \dots, x_n \in \mathbb{R}$.
+
+So, there is but one connected component, namely the entire space. This follows in particular from the fact that two (nontrivial) open sets may not have empty intersection. 
+
+\begin{proof}
+Assume $X \cap Y$ has empty intersection. However we know by definition of open sets under the finite complement topology that both $X^C$ and $Y^C$ are finite. However, this is a contradiction since $X$ contains infinitely many points, yet, $Y^C$ is finite. Hence, there must be some $y \in Y $ such that $y =x $ for some $x \in X$.
+\end{proof}
+
+I assert furthermore that the half-open interval topology on $\mathbb{R}$ has all real numbers (singeltons) as the only connected components.
+
+\begin{proof}
+Suppose towards a contradiction that there exists some connected component containing at least the two points $x \neq y \in \mathbb{R}$. Then, it must be that there are no two open sets $X$ and $Y$ satisfying a few properties.
+
+Say without loss of generality that $x< y$ 
+
+Now, consider the following open sets: 
+\[X = (x-1,(x+y)/2)\]
+\[Y=[(x+y)/2,y+1)\]
+
+It should be clear that these sets satisfy the requisite properties to separate $x$ and $y$; In particular we see that the sets are disjoint, open, and nonempty.
+
+ Contradiction.
+\end{proof}
+
+\section{Chapter 4 Section 2}
+
+\subsection{Problem 8}
+
+\subsubsection{Question}
+Let $X$ be a compact Hausdorff space. Show that the cone on $X$ is homeomorphic to the one-point compactification of $X \times [0,1)$. If $A$ is closed in $X$, show that $X / A $ is homeomorphic to the one-point compactification of $X-A$.
+
+\subsubsection{Answer}
+I claim that $CX$ and the one point compactification of $X \times [0,1)$ are homeomorphic. In particular, I will demonstrate that the following function is a homeomorphism:
+\[\varphi:  (X \times [0,1])/\equiv  \to  (X \times [0,1))^* \] (where $\equiv$ is  the equivalance relation that associates each (x,1) together) with $\varphi$ defined as  $\varphi (x,t) = (x,t)$ for $t \neq 1$ and $\varphi(x,t) = \infty$  given $t =1$. 
+
+We first prove that this mapping is continuous. Towards this end let $Z$ be an open set in the codomain of $\varphi$. Then its preimage $\varphi^{-1}(Z)$ is open. There are two cases
+
+\emph{Case 1: } $\infty \notin Z$. This case is obvious, since in this restriction the mapping $\varphi$ is just the identity mapping, and the topologies of the two spaces restricted to $(x,t) \neq \infty t \neq 1$ are exactly equivalent
+
+\emph{Case 2: } $\infty \in Z$. In this case we just have that $\varphi^{-1}(Z) = \varphi^{-1}(Z \backslash \{ \infty \}) \cup \{(x,1)\ |\ x \in X\} $. This set must be open however since we know that $Z \backslash \{ \infty \}$ is open ($Z^C$ is compact, thus closed) and $\{(x,1)\ |\ x \in X\}$ is open since $X$ is open.
+
+Now that we have established that $\varphi$ is a continuous function it remains only to show that it is bijective. It is clearly surjective since given $x $ in the codomain there is always some $x'$ such that $\varphi{x'}=x$. Take $x = x'$ if $x \neq \infty$. Otherwise just take $x' = (a,1)$ for some $a$.
+
+It is injective too since, assume $\varphi(x)= \varphi(y)$. If $\varphi(x) \neq \infty$ then we have $x = y$ since on this region $\varphi$ is just the identity map. If $\varphi(x)= \varphi(y)= \infty$ then we have $x=(x_1,1)$ $y=(x_2,1)$ but these too are the same since the equivalence relation by which we mod out to get the cone states this explicitly.
+
+For a closed set $A$ we know that $X / A $ is homeomorphic to the one point compactification of $X-A$ by the function $\varphi$ which takes points in $A$ to $\infty$. This is clearly bijective.
+
+
+Take an open set in the codomain. The preimage of this set must be open too since, if it does not have $\infty \in U$  we are just dealing with the identity mapping. Otherwise note that there must be nonzero intersection between any open set containing $\infty$ and $U$ since otherwise the complement of $U$ would not be closed (any open set with $\infty$ has $\infty$ as a limit point.) Thus, $U$ has open preimage even in the case that it does have $\infty$. The noninfinite component has open preimage as, by def of compactification its complement is compact (and therefore closed). Moreover we don't make the set nonopen by adding the preimage of $\infty$ since we have already shown that every open set containing $\infty$ is in $U$. Thus, it is ``within" the set and can't make it nonopen.
+
+More formally, we know that the preimage of $\infty$ is not the limit point of any set on the boundary.
+
+\subsection{Problem 11}
+
+\subsubsection{Question}
+Show that the function $f: [0,2 \pi ] \times [0,\pi] \to \mathbb{E}^5$ defined by $f(x,y) = (\cos{x}, \cos{2 y },$ $ \sin{2 y}, \sin{x} \cos{y}, \sin{x}\sin{y})$ induces an embedding of the Klein bottle in $\mathbb{E}^5$
+\subsubsection{Answer}
+First observe that for all $y$ we have $f(0,y)=f(2 \pi , y)$ since both evaluations yield $(1,\cos{2 y},\sin{2 y},0,0,0)$. Moreover we see that for all $x$ we get $f(x,0)=f(x,2 \pi)=f(2\pi - x,2 \pi)= (\cos{x},1,0,\sin{x},\sin{x},0) $
+
+Finally we must verify that for no pair of $(x_1,y_1), (x_2,y_2)$ that does not have $x=0$ or $ x = 2 \pi$ or $y=0$ or $ y= 2\pi$ do we get $\varphi(x_1,y_1)=\varphi(x_2,y_2)$ and furthermore that the edges do not intersect except as they should.
+
+\[(\cos{x_1}, \cos{2 y_1 }, \sin{2 y_1}, \sin{x_1} \cos{y_1}, \sin{x_1}\sin{y_1}) \]\[= (\cos{x_2}, \cos{2 y_2 }, \sin{2 y_2}, \sin{x_2} \cos{y_2}, \sin{x_2}\sin{y_2}) \]
+\[\Rightarrow (x=0 \mathrm{\ or\ } x = 2 \pi \mathrm{\ or\ } y=0 \mathrm{\ or\ } y= 2\pi )\] 
+as desired.
+
+That the edges of the square (image) do not map to intersections except as they should is obvious since for us to get $\varphi(x) = \varphi(y)$ we need in particular that the coordinates agree ($\cos{x}=1$ and $\sin{x}=0$), but as we checked previously this is not the case except in the corner, where it should be the case.
+
+
+
+
+\end{document}

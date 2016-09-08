@@ -1,0 +1,53 @@
+\documentclass[10pt]{article}
+\setlength\headheight{14.5pt}
+\title{Homework}
+\author{Frederick Robinson}
+\date{17 May 2010}
+\usepackage{amsfonts}
+\usepackage{fancyhdr}
+\usepackage{amsthm}
+\pagestyle{fancyplain}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+
+\begin{document}
+
+\lhead{Frederick Robinson}
+\rhead{Math 344: Topology}
+
+   \maketitle
+
+\section{Chapter 8 Section 2}
+
+\subsection{Problem 3}
+\subsubsection{Question}
+Take the triangulation for the M\"obius strip shown in Fig. 6.2, orient one of the triangles, then go round the strip orienting each triangle in a manner compatible with the one preceding it. (Of course, when you get back to where you started the orientations do not match up.) What is the boundary of the two-dimensional chain formed by taking the sum of these oriented triangles?
+\subsubsection{Answer}
+The boundary is consists of every edge which is just adjacent to one 2-simplex as well as one more edge, counted twice.
+
+\subsection{Problem 7}
+\subsubsection{Question}
+Show that any cycle of $K$ is a bounding cycle of the cone on $K$.
+\subsubsection{Answer}
+\begin{proof}
+Let $(a_1,a_2), (a_2,a_3) \dots, (a_n,a_1)$ be a cycle in $K$. If $x$ is the vertex of $CK$ then it is easy to verify that $(a_1,a_2, x), (a_2,a_3,x) \dots, (a_n,a_1,x)$ is a collection of oriented triangle which have the given cycle as their boundary.
+\end{proof}
+
+\subsection{Problem 8}
+\subsubsection{Question}
+Triangulate $S^n$ so that the antipodal map is simplicial and induces a triangulation of $P^n$. If $n$ is odd, find an $n$-cycle in this triangulation of $P^n$. What difficulties arise when $n$ is even?
+\subsubsection{Answer}
+We triangulate by first fixing a triangulation of $S^1$ and then generating a triangulation of $S^{n+1}$ by taking the double cone of our triangulation of $S^{n}$. An $n$-cycle in the triangulation of $P^n$ which arises this way is just an $n$-cycle in the original $S^n$. If the space has even dimension though, this may not work since 
+
+\subsection{Problem 10}
+\subsubsection{Question}
+Suppose $|K|$ is homeomorphic to the torus with the interiors of three disjoint discs removed. Orient each boundary circle of $|K|$ and let $z_1, z_2, z_3$ be the resulting elementary $1$-cycles of $K$. Show that $\left[z_3\right]=\lambda[z_1]+ \mu [z_2]$ where $\lambda = \pm 1$, $\mu = \pm 1$. Do we have the same result if we replace the torus by the Klein bottle?
+\subsubsection{Answer}
+In the illustration we have
+\[z_1 = (f,a,b,l,h,g) \quad z_2 = (b,c,d,m,i,l) \quad z_3= (d,e,f,k,j,m)\]
+so we note that $z_1+z_2 = (f,a,c,d,m,h,g) = z_3$
+
+This result does not hold with the Klein bottle: the fact that it is not orientable means that the sides are not aligned properly. In particular $(f,i)$ is oriented differently in $z_1, z_3$ if we were to associate the edges as in a klein bottle.
+
+\end{document}

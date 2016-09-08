@@ -1,0 +1,63 @@
+\documentclass[10pt]{article}
+\setlength\headheight{14.5pt}
+\title{Homework}
+\author{Frederick Robinson}
+\date{12 April 2010}
+\usepackage{amsfonts}
+\usepackage{fancyhdr}
+\usepackage{amsthm}
+\pagestyle{fancyplain}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+
+\begin{document}
+
+\lhead{Frederick Robinson}
+\rhead{Math 344: Topology}
+
+   \maketitle
+
+\section{Chapter 5 Section 2}
+
+\subsection{Problem 11}
+\subsubsection{Question}
+Let $X$ be a path-connected space. When is it true that for any two points $p,q \in X$ all paths from $p$ to $q$ induce the same isomorphism between $\pi_1(X,p)$ and $\pi_1(X,q)$
+\subsubsection{Answer}
+This holds if and only if $X$ is simply connected.
+\begin{proof}
+We have from the previous exercise that the isomorphisms induced by two paths $\gamma$ and $\sigma$ are the same if and only if the inner automorphism given by $\left<\sigma^{-1} \gamma\right>$ is the identity automorphism, but this is the case if and only if $\pi_1(X)$ is abelian. 
+\end{proof}
+\subsection{Problem 14}
+\subsubsection{Question}
+Let $\mathbb{E}^3_+$ denote those points of $\mathbb{E}^3$ which have nonnegative final coordinate. Show that the space $\mathbb{E}^3_+-\{(x,y,z)|y=0,0\leq z \leq 1\}$ has trivial fundamental group.
+\subsubsection{Answer}
+\begin{proof}
+Say $X=\mathbb{E}^3_+-\{(x,y,z)|y=0,0\leq z \leq 1\}$. Fix some arbitrary point $x \in X$ and some arbitary loop $\varphi:[0,1]\to X$ based at $x$. Since $\varphi$ is homotopic to the constant map $\rho : [0,1]\to X$ defined by $\rho(y)=x$ for all $y \in [0,1]$ (via the straight line homotopy) $\pi_1(X,x)$ is the trivial group.
+\end{proof}
+\section{Chapter 5 Section 3}
+
+\subsection{Problem 21}
+\subsubsection{Question}
+Describe the homomorphism $f_*: \pi_1(S^1,1) \to \pi(S^1,f(1))$ induced by each of the following maps:
+\begin{enumerate}
+\item The antipodal maps $f(e^{i \theta})=e^{i (\theta+\pi)}$, $0 \leq \theta \leq 2 \pi$.
+\item $f(e^{i \theta})=e^{i n \theta}$, $0 \leq \theta \leq 2 \pi $, where $n \in \mathbb{Z}$
+\item $\displaystyle f(e^{i \theta})= \left\{ \begin{array}{ll} e^{i \theta} & 0 \leq \theta \leq \pi \\ e^{i(2\pi - \theta)}&\pi \leq \theta \leq 2 \pi \end{array} \right.$
+\end{enumerate}
+\subsubsection{Answer}
+Throughout let $\varphi: \mathbb{Z} \to \mathbb{Z}$ be a homomorphism of groups.
+\begin{enumerate}
+\item $\varphi(x)=x$
+\item $\varphi(x)=nx$
+\item $\varphi(x)=0$
+\end{enumerate}
+
+\subsection{Problem 23}
+\subsubsection{Question}
+Provide a precise solution to the second part of Problem 8 as follows. Let $\alpha, \beta$ be the paths in $A$ defined by $\alpha(s) = (s+1,0)$ and $\beta(s)=h \alpha(s), 0 \leq s \leq 1$. Show that if $h$ is homotopic to the identity relative to the two boundary circles of $A$ then the loop $\alpha^{-1}\beta$ is homotopic rel$\{0,1\}$ to the constant loop at the point $(1,0)$. Now check that this loop represents a nontrivial element of the fundamental group of $A$.
+\subsubsection{Answer}
+\begin{proof}
+If $h$ is homotopic to the identity relative to the two boundary circles of $A$ via some homotopy $F$ then $\alpha^{-1} \beta$ is homotopic to the constant loop relative to $\{0,1\}$ via $F$. However, $\alpha^{-1}\beta$ is homotopic to the loop of constant radius in the annulus which we know to be nontrivial (there is a deformation retract from the annulus to the circle which takes such loops to nontrivial elements of the circle's fundamental group)
+\end{proof}
+\end{document}
